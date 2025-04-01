@@ -1,0 +1,20 @@
+name: Test All Java Files
+on: [push]
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v2.5.1
+        with:
+          java-version: '24'
+
+      - name: Run all .java files
+        run:  |
+          for file in $(find . -name "*.java"); do
+            echo "Running $file"
+            java "$file"
+          done
