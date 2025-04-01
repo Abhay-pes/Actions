@@ -1,7 +1,7 @@
 name: Test All Java Files
 on: [push]
 jobs:
-  test-python:
+  test-java:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
